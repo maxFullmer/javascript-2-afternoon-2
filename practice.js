@@ -51,7 +51,6 @@ var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
   Loop through the given array and alert every item in the array.
 */
 
-//Code Here
 function looper(family) {
   for (i = 0; i < family.length; i++) {
     alert(family[i]);
@@ -126,7 +125,18 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
   and the second item in the array being the odds array (all the odd values from numbersArray).
 */
 
-//Code Here
+function divider(numbersArray) {
+  let dividerArray = [[],[]];
+  for (i = 0; i <= numbersArray.length - 1; i++) {
+    if (numbersArray[i] % 2 === 0) {
+      dividerArray[0].push(numbersArray[i]);
+    }
+    if (numbersArray[i] % 2 === 1) {
+      dividerArray[1].push(numbersArray[i]);
+    }
+  }
+  return dividerArray
+}
 
 
 
@@ -148,7 +158,19 @@ var getRandomArbitrary = function() {
   If it is, return true, if it's not, return false
 */
 
-//Code Here
+function finder(arr) {
+  let randomNumber = function() {
+    getRandomArbitrary();
+  }
+  for (i = 0; i <= arr.length - 1; i++) {
+    if (arr[i] === randomNumber) {
+      return true
+    }
+  }
+  if (arr[arr.length - 1] !== randomNumber) {
+    return false
+  }
+}
 
 
 
@@ -177,8 +199,29 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   addItem() --> [];
 */
 
-//Code Here
+function removeItem(myGroceryList,item) {
+  if (item == (false || null || 0 || undefined || NaN)) {
+    return []
+  }
+  else if (item == true) {
+  for (i = 0; i <= myGroceryList.length - 1; i++) {
+    if (item === myGroceryList[i]) {
+      myGroceryList.splice(i,1);
+    }
+  }
 
+  return myGroceryList
+  }
+}
+
+function addItem(myGroceryList,item) {
+  if (item == (false || null || 0 || undefined || NaN)) {
+    return []
+  }
+  else if (item == true) {
+    return myGroceryList.push(item)
+  }
+}
 
 
 ////////// PROBLEM 9 //////////
@@ -187,7 +230,13 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   Write a function called maker that creates an array, fills that array with numbers from 1 to 215, then returns the array.
 */
 
-//Code Here
+function maker() {
+  let arr = [];
+  for (i = 1; i <= 215; i++) {
+    arr.push(i);
+  }
+  return arr
+}
 
 
 
@@ -203,7 +252,19 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
   Your output should look like this -> [15, 19, 26, 29, 35, 44, 58]
 */
   
-//Code Here
+function addTen(numbers) {
+  for (i = 0; i <= numbers.length - 1; i++) {
+    if (numbers[i] == Number) {
+      numbers[i] += 10;
+    }
+    else if (numbers[i] == String) {
+      numbers[i] = parseInt(numbers[i]);
+      numbers[i] += 10;
+    }
+  return numbers
+  }
+}
+
 
 
 
@@ -228,7 +289,14 @@ for(var i = 0; i < num2; i++){
   Return the longer of the two arrays.
 */
 
-//Code Here
+function longer(arr1,arr2) {
+  if (arr1.length >= arr2.length) {
+    return arr1
+  }
+  if (arr2.length > arr1.length) {
+    return arr2
+  }
+}
 
 
 
@@ -240,8 +308,17 @@ for(var i = 0; i < num2; i++){
   Example: var arr1 = [1,2,3,4]; var arr2 = [2,4,5,6]; newArray // [2,4]
 */
 
-//Code Here
-
+function both(arr1,arr2) {
+  let newArray = [];
+  for (i = 0; i <= arr1.length - 1; i++) {
+    for (j = arr2.length - 1; j >= 0; j--) {
+      if (arr1[i] === arr2[j]) {
+        newArray.push(arr1[i]);
+      }
+    }
+  }
+  return newArray
+}
 
 
 ////////// PROBLEM 12 //////////
@@ -280,8 +357,11 @@ var colt = {
   After that console.log the length of the Array and make sure that it's equal to 4. 
 */
 
-//Code Here
-
+devMountainEmployees.push(joe);
+devMountainEmployees.push(calhan);
+devMountainEmployees.push(ryan);
+devMountainEmployees.push(colt);
+console.log(devMountainEmployees.length)
 
 
 /*
@@ -289,7 +369,11 @@ var colt = {
   Loop through your devMountainEmployees until you find cahlan, then remove him from the array.
 */
 
-//Code Here
+for (i = 0; i <= devMountainEmployees.length - 1; i++) {
+  if (devMountainEmployees[i] === 'cahlan') {
+    devMountainEmployees.splice(i,1);
+  }
+}
 
 
 
@@ -301,7 +385,7 @@ var colt = {
   Create an empty array called users.
 */
 
-//Code Here
+let users = [];
 
 
 
@@ -320,7 +404,7 @@ var user1 = {
 };
 // Do not edit the code above.
 
-//Code Here
+users.push(user1);
 
 
 
@@ -334,7 +418,11 @@ var user1 = {
   Once you find the array index he's located in, delete him from the array.
 */
 
-//Code Here
+for (i = 0; i <= users.length - 1; i++) {
+  if (users[i].name === 'Mark McIver') {
+    users.splice(i,1);
+  }
+}
 
 
 
